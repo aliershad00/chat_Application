@@ -57,7 +57,6 @@ const URL = `${process.env.REACT_APP_BACKEND_URL}/api/register`
 
 try {
   const response = await axios.post(URL,data)
-  console.log("response is :",response);
   toast.success(response.data.message)
 
   if(response.data.success){
@@ -76,7 +75,6 @@ try {
   toast.error(error?.response?.data?.message)
   
 }
-  console.log("data",data);
  }
   
 

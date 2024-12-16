@@ -15,7 +15,6 @@ const getConversation = async (currentUserId) => {
         (preve, curr) => {
 
           const msgByuserId = curr?.msgByuserId?.toString()
-          //console.log("curr?.masByUserId",msgByuserId);
 
           if (msgByuserId !== currentUserId) {
             return preve + (curr?.seen ? 0 : 1)

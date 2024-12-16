@@ -6,6 +6,7 @@ import { logout, setUser,setOnlineUser, setSocketConnection } from "../redux/use
 import Sidebar from "../component/Sidebar";
 import logo from '../assets/Logo.png'
 import io from "socket.io-client"
+import toast from "react-hot-toast";
 
 export const Home = () => {
   const user = useSelector((state) => state.user);
@@ -13,7 +14,6 @@ export const Home = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-//console.log("user",user);
 
   const fetchUserDetails = async () => {
     try {
@@ -26,14 +26,13 @@ export const Home = () => {
 
       dispatch(setUser(response.data.data));
 
-      if (response.data.data.logout) {
+      if (response?.data?.data?.logout) {
         dispatch(logout());
         navigate("/email");
       }
 
-     // console.log("current user details : ", response);
     } catch (error) {
-      console.log("error", error);
+      toast.error(error?.response?.data?.data?.message)
     }
   };
 
@@ -54,7 +53,6 @@ export const Home = () => {
 //geting all online user from backend
 socketConnection.on('onlineUser',(data)=>{
 
-  //console.log("onlineUser : ",data);
   dispatch(setOnlineUser(data))
 })
 

@@ -16,8 +16,6 @@ export const CheckPasswordPage = () => {
   const location = useLocation();
   const dispatch = useDispatch();
 
-  console.log("Location is ", location.state);
-
   useEffect(() => {
     if (!location?.state?.name) {
       navigate("/email");

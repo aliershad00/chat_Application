@@ -32,7 +32,6 @@ const SearchUser = ({onClose}) => {
     useEffect(()=>{
       handleSearchUser()
     },[search])
-    console.log("searchUser",searchUser);
     
   return (
     <div className="fixed top-0 bottom-0 left-0 right-0 bg-slate-700 bg-opacity-40 p-2 z-10">

@@ -110,7 +110,6 @@ export const MessagePage = () => {
       });
 
       socketConnection.on('message', (data) => {
-        console.log('message data :', data)
         setAllMessage(data)
       })
     }
@@ -197,8 +196,6 @@ export const MessagePage = () => {
         <div className="flex flex-col gap-2 py-2 mx-2" ref={currentMessage}>
           {
             allMessage.map((msg, index) => {
-              console.log("msg", msg);
-              console.log("user_id : ", user?._id);
 
 
               return (

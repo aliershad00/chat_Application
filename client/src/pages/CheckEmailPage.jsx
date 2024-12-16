@@ -4,7 +4,6 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { FaUser } from "react-icons/fa";
 
-
 export const CheckEmailPage = () => {
   const [data, setData] = useState({
     email: "",
@@ -39,8 +38,8 @@ export const CheckEmailPage = () => {
           email: "",
         });
 
-        navigate("/password",{
-          state: response?.data?.data
+        navigate("/password", {
+          state: response?.data?.data,
         });
       }
     } catch (error) {
@@ -52,9 +51,7 @@ export const CheckEmailPage = () => {
     <div className="mt-5">
       <div className="bg-white w-full max-w-md rounded overflow-hidden p-4 mx-auto">
         <div className="w-fit mx-auto mb-3">
-        <FaUser
-        size={65}
-        />
+          <FaUser size={65} />
         </div>
         <h3 className=" text-red-600 text-center text-2xl">
           Welcome to Chat App!
